@@ -1,5 +1,12 @@
 import os
-from PIL import Image
+
+# Check if the 'PIL' package is installed, if not, install it
+try:
+    from PIL import Image
+except ImportError:
+    import os
+    os.system('pip install pillow')
+    from PIL import Image
 
 def merge_images_horizontally(input_folder, output_folder, output_filename):
     """
